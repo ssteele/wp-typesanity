@@ -1,0 +1,21 @@
+{
+    "name": "ssteele/wp-sanitize",
+    "description": "Sanitize user input",
+    "license": "MIT",
+    "keywords": ["sanitize, user input, $_POST, $_GET, $_REQUEST"],
+    "authors": [
+        {
+            "name": "Steve Steele",
+            "email": "steven.harville.steele@gmail.com"
+        }
+    ],
+    "require-dev": {
+        "phpunit/phpunit": "5.*",
+        "10up/wp_mock": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "SteveSteele\\Sanitize\\": "src"
+        }
+    }
+}
