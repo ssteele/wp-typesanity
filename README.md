@@ -1,8 +1,8 @@
-##WP Sanitize
+## WP Sanitize
 
 *A WordPress plugin that sanitizes user input*
 
-###Description
+### Description
 
 Sanitize user input by calling a simple function:
 
