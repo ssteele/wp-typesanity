@@ -1,6 +1,6 @@
-## WP Sanitize
+## WP Typesanity
 
-*A WordPress plugin that sanitizes user input*
+*A WordPress plugin that sanitizes user input by unit type*
 
 ### Description
 
@@ -27,8 +27,8 @@ Bulk sanitize an array of user input:
 
 Perhaps you'd like to inject the dependency instead of calling a global function:
 
-    function someCallable($input, $sanitizer)
+    function myFunction($input, UserInput $userInput)
     {
-        return = $sanitizer::sanitize($input, 's'); // all options above are available
+        return = $userInput->sanitize($input, 's'); // all options above are available
     }
-    $name = someCallable($_POST['name'], UserInput::class);
+    $name = myFunction($_POST['name'], new UserInput());

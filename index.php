@@ -1,8 +1,8 @@
 <?php
 /*
 Plugin Name: SHS Sanitize
-Plugin URI: https://github.com/ssteele/wp-sanitize
-Description: Sanitize user input for WordPress sites
+Plugin URI: https://github.com/ssteele/wp-typesanity
+Description: Sanitize input by type when using WordPress
 Version: 1.0
 Author: Steve Steele
 Author URI: http://steve-steele.com/
@@ -39,5 +39,6 @@ register_activation_hook(__FILE__, 'shsSanitizeInstall');
  */
 function shsSanitize($input, $type = null, $allow = [])
 {
-    return UserInput::sanitize($input, $type, $allow);
+    $userInput = new UserInput();
+    return $userInput->sanitize($input, $type, $allow);
 }

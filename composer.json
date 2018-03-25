@@ -3,7 +3,7 @@
     "description": "Sanitize input by type when using WordPress",
     "version": "1.0.0",
     "keywords": ["sanitize, input, type, wordpress"],
-    "homepage": "https://github.com/ssteele/wp-sanitize",
+    "homepage": "https://github.com/ssteele/wp-typesanity",
     "time": "2018-03-25",
     "license": "MIT",
     "authors": [
@@ -16,8 +16,8 @@
     ],
     "support": {
         "email": "steven.harville.steele@gmail.com",
-        "issues": "https://github.com/ssteele/wp-sanitize/issues",
-        "source": "https://github.com/ssteele/wp-sanitize"
+        "issues": "https://github.com/ssteele/wp-typesanity/issues",
+        "source": "https://github.com/ssteele/wp-typesanity"
     },
     "require-dev": {
         "phpunit/phpunit": "6.*",
