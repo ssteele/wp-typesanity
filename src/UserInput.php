@@ -11,7 +11,7 @@ class UserInput
      * @param  array        $allow    Allowed protocols: passed to wp_kses
      * @return string                 Sanitized output
      */
-    public static function sanitize($input, $type = null, $allow = [])
+    public function sanitize($input, $type = null, $allow = [])
     {
         $input = wp_kses($input, $allow);
 
@@ -22,18 +22,18 @@ class UserInput
                 $i = 0;
 
                 foreach ($input as $key => $val) {
-                    $output[$key] = self::sanitizeByType($val, $type[$i]);
+                    $output[$key] = $this->sanitizeByType($val, $type[$i]);
                     $i++;
                 }
             } elseif (is_array($input) && count($type) == 1) {
                 // Sanitize homogeneous (w/ respect to type) array
                 $output = array();
                 foreach ($input as $key => $val) {
-                    $output[$key] = self::sanitizeByType($val, $type);
+                    $output[$key] = $this->sanitizeByType($val, $type);
                 }
             } else {
                 // Sanitize variables
-                $output = self::sanitizeByType($input, $type);
+                $output = $this->sanitizeByType($input, $type);
             }
         } else {
             // Run through wp_kses only
@@ -50,7 +50,7 @@ class UserInput
      * @param  string|array $type    Type specification
      * @return string                Sanitized output (or empty string)
      */
-    private static function sanitizeByType($input, $type)
+    private function sanitizeByType($input, $type)
     {
         $output = $input;
 
