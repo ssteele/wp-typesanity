@@ -1,25 +1,37 @@
 {
     "name": "ssteele/wp-typesanity",
-    "description": "Sanitize user input by type on WordPress",
+    "description": "Sanitize input by type when using WordPress",
     "version": "1.0.0",
-    "minimum-stability": "dev",
-    "type": "package",
+    "keywords": ["sanitize, input, type, wordpress"],
+    "homepage": "https://github.com/ssteele/wp-sanitize",
+    "time": "2018-03-25",
     "license": "MIT",
-    "keywords": ["sanitize, input, type, wordpress, $_POST, $_GET, $_REQUEST"],
     "authors": [
         {
             "name": "Steve Steele",
-            "email": "steven.harville.steele@gmail.com"
+            "email": "steven.harville.steele@gmail.com",
+            "homepage": "http://steve-steele.com",
+            "role": "Developer"
         }
     ],
+    "support": {
+        "email": "steven.harville.steele@gmail.com",
+        "issues": "https://github.com/ssteele/wp-sanitize/issues",
+        "source": "https://github.com/ssteele/wp-sanitize"
+    },
     "require-dev": {
         "phpunit/phpunit": "6.*",
-        "10up/wp_mock": "0.3.0"
+        "10up/wp_mock": "0.3.*"
     },
     "autoload": {
         "psr-4": {
-            "SteveSteele\\TypeSanity\\": "src",
+            "SteveSteele\\TypeSanity\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
             "SteveSteele\\TypeSanityTest\\": "tests"
         }
-    }
+    },
+    "minimum-stability": "stable"
 }
