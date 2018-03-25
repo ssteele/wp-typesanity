@@ -2,7 +2,7 @@
     "name": "ssteele/wp-typesanity",
     "description": "Sanitize input by type when using WordPress",
     "version": "1.0.0",
-    "keywords": ["sanitize, input, type, wordpress"],
+    "keywords": ["sanitize", "input", "type", "wordpress"],
     "homepage": "https://github.com/ssteele/wp-typesanity",
     "time": "2018-03-25",
     "license": "MIT",
