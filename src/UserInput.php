@@ -1,10 +1,9 @@
 <?php
 
-namespace SteveSteele\Sanitize;
+namespace SteveSteele\TypeSanity;
 
 class UserInput
 {
-
     /**
      * Sanitize user input: run through wp_kses at a minimum
      * @param  mixed        $input    Untrusted user input
@@ -56,17 +55,27 @@ class UserInput
         $output = $input;
 
         switch ($type) {
+            case 'string':
+            case 'str':
             case 's':
                 $output = filter_var($output, FILTER_SANITIZE_STRING);
                 break;
 
+            case 'integer':
+            case 'int':
             case 'i':
                 $output = intval($output);
                 $output = filter_var($output, FILTER_SANITIZE_NUMBER_INT);
-                // only pass back '0' if input was 0
-                $output = ('0' !== $output || 0 === $input) ? $output : '';
+
+                // pass an empty string if output reports '0' unless input is zeroish
+                if (preg_match('/^0/', $input)) {
+                    $output = round($output);
+                } elseif ('0' === $output) {
+                    $output = '';
+                }
                 break;
 
+            case 'float':
             case 'f':
                 $output = filter_var($output, FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
                 break;
