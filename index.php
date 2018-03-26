@@ -22,23 +22,4 @@ function shsSanitizeInstall()
 }
 register_activation_hook(__FILE__, 'shsSanitizeInstall');
 
-
-/*
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    WORDPRESS FUNCTIONALITY
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-*/
-
-
-/**
- * Sanitize user input (wrapper)
- * @param  mixed        $input    Untrusted user input
- * @param  string|array $type     Type specification
- * @param  array        $allow    Allowed protocols: passed to wp_kses
- * @return string                 Sanitized output
- */
-function shsSanitize($input, $type = null, $allow = [])
-{
-    $userInput = new UserInput();
-    return $userInput->sanitize($input, $type, $allow);
-}
+require_once __DIR__ . '/src/functions.php';

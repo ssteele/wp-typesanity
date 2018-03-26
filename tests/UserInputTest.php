@@ -208,7 +208,7 @@ class UserInputTest extends BaseTestCase
         $this->assertEquals($expected, $this->userInput->sanitize($input, 'f'));
 
         $input = '0.0';
-        $expected = '0';
+        $expected = '0.0';
         $this->mockWpKses($input);
         $this->assertEquals($expected, $this->userInput->sanitize($input, 'f'));
 
@@ -240,7 +240,7 @@ class UserInputTest extends BaseTestCase
         $this->assertEquals($expected, $this->userInput->sanitize($input, 'float'));
 
         $input = 0.0;
-        $expected = '0';
+        $expected = '0.0';
         $this->mockWpKses($input, '0.0');
         $this->assertEquals($expected, $this->userInput->sanitize($input, 'f'));
 
