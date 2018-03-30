@@ -26,7 +26,7 @@ WP Typesanity delivers a consistent experience when dealing with the various bas
 
 Navigate to your plugin via the terminal and issue:
 
-`composer require ssteele/wp-typesanity:1.0.0`
+`composer require ssteele/wp-typesanity`
 
 ### Documentation
 
