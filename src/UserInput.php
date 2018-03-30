@@ -69,7 +69,7 @@ class UserInput
 
                 // pass an empty string if output reports '0' unless input is zeroish
                 if (preg_match('/^0/', $input)) {
-                    $output = round($output);
+                    $output = (string) round($output);
                 } elseif ('0' === $output) {
                     $output = '';
                 }
