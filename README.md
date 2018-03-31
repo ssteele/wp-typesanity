@@ -50,4 +50,4 @@ Bulk sanitize an array of user input:
 
     $post = $translator->sanitize($_POST);                  // sanitize all post elements
     $post = $translator->sanitize($_POST, 'i');             // sanitize all post elements as integer
-    $post = $translator->sanitize($_POST, ['s', 'i', 'f']); // sanitize all post elements against respective types
+    $post = $translator->sanitize($_POST, ['s', 'i', 'f']); // sanitize all post elements (of known order) against respective types
