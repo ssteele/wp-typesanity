@@ -24,7 +24,7 @@ class UserInput
                     $output[$key] = $this->sanitizeByType($val, $type[$i]);
                     $i++;
                 }
-            } elseif (is_array($input) && count($type) == 1) {
+            } elseif (is_array($input) && ! is_array($type)) {
                 // Sanitize homogeneous (w/ respect to type) array
                 $output = array();
                 foreach ($input as $key => $val) {
