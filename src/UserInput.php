@@ -13,8 +13,6 @@ class UserInput
      */
     public function sanitize($input, $type = null, $allow = [])
     {
-        $input = wp_kses($input, $allow);
-
         if (! is_null($type) && empty($allow)) {
             if (is_array($input) && is_array($type) && count($input) == count($type)) {
                 // Sanitize array elements explicitly specifying a type for each
@@ -22,6 +20,7 @@ class UserInput
                 $i = 0;
 
                 foreach ($input as $key => $val) {
+                    $val = wp_kses($val, $allow);
                     $output[$key] = $this->sanitizeByType($val, $type[$i]);
                     $i++;
                 }
@@ -29,15 +28,17 @@ class UserInput
                 // Sanitize homogeneous (w/ respect to type) array
                 $output = array();
                 foreach ($input as $key => $val) {
+                    $val = wp_kses($val, $allow);
                     $output[$key] = $this->sanitizeByType($val, $type);
                 }
             } else {
                 // Sanitize variables
+                $input = wp_kses($input, $allow);
                 $output = $this->sanitizeByType($input, $type);
             }
         } else {
             // Run through wp_kses only
-            $output = $input;
+            $output = wp_kses($input, $allow);
         }
 
         return $output;
